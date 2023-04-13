@@ -1,0 +1,72 @@
+
+<app-header-customer></app-header-customer>
+
+
+<div class="total" id="main2">
+  <div class="imgbox">
+<img src="../../assets/image (4).png" alt="loading please wait">
+  </div>
+  
+  <div class="container">
+    <div class="row">
+      
+      <div class="col-md-6 offset-md-3">
+        
+<div class="container text-center">
+
+  
+  <form class="full-width">
+    <form (ngSubmit)="updateCustomer()" class="form1">
+      
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="firstName" name="firstName" [(ngModel)]="customer.firstname">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="lastName" name="lastName" [(ngModel)]="customer.lastname" >
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email ID</label>
+        <input type="email" class="form-control" id="emailId" name="emailId" [(ngModel)]="customer.email" >
+      </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Mobile No.</label>
+      <input type="text" class="form-control" id="mobileNo" name="mobileNo" [(ngModel)]="customer.mobileNo">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Date of Birth</label>
+      <input type="text" class="form-control" id="doB" name="doB" [(ngModel)]="customer.doB" >
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Address</label>
+      <input type="text" class="form-control" id="address" name="address" [(ngModel)]="customer.address">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">City</label>
+      <input type="text" class="form-control" id="city" name="city" [(ngModel)]="customer.city" >
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">State</label>
+      <input type="text" class="form-control" id="state" name="state" [(ngModel)]="customer.state" >
+    </div>
+    
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Pincode</label>
+      <input type="number" class="form-control" id="pincode" name="pincode" [(ngModel)]="customer.pincode">
+    </div>
+    <section>
+      <div class="example-button-row" style="margin-left: 60px;">
+        <button mat-flat-button color="primary" type="submit" class="but">Save</button>
+      </div>
+    </section>
+    
+  </form>
+</form>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>

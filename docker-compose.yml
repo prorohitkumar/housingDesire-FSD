@@ -1,0 +1,154 @@
+version: "2"
+services:
+  mongodbservice:
+    image: mongo:latest
+    container_name: mongodb-user
+    hostname: localhost
+    ports:
+      - 27017:27017
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      - 15672:15672
+      - 5672:5672
+
+  mysqlservice:
+    image: mysql:latest
+    container_name: mysql
+    restart: always
+    hostname: localhost
+    network_mode: "host"
+    ports:
+      - 3306:3306
+    #    cap_add:
+    #      - SYS_NICE
+    environment:
+      MYSQL_ROOT_PASSWORD: 'Password'
+      MYSQL_DATABASE: authuser
+      MYSQL_PASSWORD: root
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+
+
+  neo4j:
+    image: neo4j:4.2.3
+    container_name: neo4j
+    restart: always
+    network_mode: "host"
+    ports:
+      - 7474:7474
+      - 7687:7687
+    environment:
+      NEO4J_AUTH: neo4j/password
+
+  eureka-server:
+    build: eureka-server/
+    container_name: eureka-server
+    restart: always
+#    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8076:8076
+
+  api-gateway:
+    build: api-gateway/
+    container_name: api-gateway
+    depends_on:
+      - eureka-server
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8086:8086
+  product-webapp:
+    build: product-webapp/
+    image: product-webapp
+    depends_on:
+      - eureka-server
+      - api-gateway
+    restart: always
+    container_name: product-webapp
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - "8099:8099"
+
+  authentication-service:
+      container_name: authentication-service
+      build: authentication-service/
+      hostname: localhost
+      network_mode: host
+      ports:
+        - 8090:8090
+      depends_on:
+        - mysqlservice
+        - eureka-server
+      restart: always
+  email-service:
+    container_name: email-service
+    build: email-service/
+    hostname: localhost
+    network_mode: host
+    ports:
+      - 8087:8087
+    depends_on:
+      - eureka-server
+    restart: always
+  customer-service:
+    container_name: customer-service
+    build: customer-service/
+    hostname: localhost
+    network_mode: host
+    ports:
+      - 8085:8085
+    depends_on:
+      - mongodbservice
+      - eureka-server
+    restart: always
+  designer-service:
+    container_name: designer-service
+    build: designer-service/
+    hostname: localhost
+    network_mode: host
+    ports:
+      - 8089:8089
+    depends_on:
+      - mongodbservice
+      - eureka-server
+    restart: always
+
+  payment-service:
+    container_name: payment-service
+    build: payment-service/
+    hostname: localhost
+    network_mode: host
+    ports:
+      - 8084:8084
+    depends_on:
+      - eureka-server
+    restart: always
+
+  recommendation-service:
+    container_name: recommendation-service
+    build: recommendation-service/
+    hostname: localhost
+    network_mode: host
+    ports:
+      - 8088:8088
+    depends_on:
+      - neo4j
+      - eureka-server
+    restart: always
+
+  review-service:
+    container_name: review-service
+    build: review-service/
+    hostname: localhost
+    network_mode: host
+    ports:
+      - 8083:8083
+    depends_on:
+      - mysqlservice
+      - eureka-server
+    restart: always

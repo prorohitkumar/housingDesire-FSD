@@ -1,0 +1,79 @@
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- BOOTSTRAP CDN Links -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap
+/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFc
+JlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/
+GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd
+/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/
+ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/
+bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/
+JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/
+css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+
+
+<body>
+    <div style="text-align: center">
+        <h3>{{message}}</h3>
+    </div>
+    <section id="form-section">
+        <h1 class="h1-tag">Your Feedback Is important For Us</h1>
+        <form class="form-content-section">
+            <div class="form-group">
+                <label for="Name"><span class="req">* </span> Name:</label>
+                <input required type="text" [(ngModel)]="fields.name" name="name" id="name"
+                    class="form-control phone" maxlength="28" placeholder="Enter your Name..." />
+            </div>
+            <div class="form-group">
+                <label for="firstname"><span class="req">* </span> Email: </label>
+                <input class="form-control" type="text" [(ngModel)]="fields.email" name="email" id="txt" required
+                    placeholder="Enter valid email address..." />
+                <div id="errFirst"></div>
+            </div>
+            <div class="form-group">
+                <label for="lastname"><span class="req">* </span> Rating : </label>
+                <input class="form-control" type="text" [(ngModel)]="fields.rating" name="rating" id="txt"
+                    placeholder="Rating from 1 to 5" required />
+                <div id="errLast"></div>
+            </div>
+            <div class="form-group">
+                <label for="email"><span class="req">* </span> Suggestions: </label>
+                <input class="form-control" required type="text" [(ngModel)]="fields.suggestion" name="suggestion"
+                    id="email" placeholder="Write your suggestions here......" />
+                <div class="status" id="status"></div>
+            </div>
+            <!-- <div class="form-group">
+                <label for="exampleInputText">Rating
+</label><br>
+    <span class="fa fa-star fa-2x checked" style="padding-left:30px ;"></span>
+    <span class="fa fa-star fa-2x checked" style="padding-left:30px ;"></span>
+    <span class="fa fa-star fa-2x checked" style="padding-left:30px ;"></span>
+    <span class="fa fa-star fa-2x" style="padding-left:30px ;"></span>
+    <span class="fa fa-star fa-2x" style="padding-left:30px ;"></span></div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Suggestions
+</label>
+                <textarea class="form-control" 
+id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div> -->
+            <div class="form-group">
+                <input class="btn" type="submit" name="submit_review" value="Register" (click)="reviewNow()">
+            </div>
+        </form>
+    </section>
+    
+</body>

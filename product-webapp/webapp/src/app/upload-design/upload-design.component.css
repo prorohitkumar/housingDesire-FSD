@@ -1,0 +1,25 @@
+.grid-container{
+    background-color: rgb(191, 188, 188);
+    box-sizing: border-box;resize: vertical;
+    
+    position: relative;}
+  
+  .img-resp{
+    max-width: 90%;
+  }
+  .file-input {
+    display: none;
+  }
+  .btn{
+    text-align: center;
+    background-color: orangered;
+    display: table-cell;
+        width: 120px;
+        border-radius: 10px;
+        margin-left: 60px;
+    }
+    .btn:hover{
+        border-color:blue;
+        transition: .5s;
+    }
+  

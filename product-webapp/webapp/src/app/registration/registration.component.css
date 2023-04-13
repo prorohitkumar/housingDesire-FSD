@@ -1,0 +1,33 @@
+
+.form-control {
+    width: 50%;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 200px;
+    padding-top: 40px;
+    padding-left: 100px;
+    padding-bottom: 28px;
+    background-color: rgb(191, 188, 188);
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: -5.5mm;
+}
+.btn{
+    color: white;
+    background-color: rgb(255, 81, 0);
+  position: fixed;
+  top: 62%;
+  right: 26%;
+  transform: translateY(50%);
+}
+input[type=radio] {
+    border: 0px;
+    width: 5%;
+    height: 1.5em;
+    display: inline;
+    margin-right: 0px;
+    margin-left: 20px;
+
+}

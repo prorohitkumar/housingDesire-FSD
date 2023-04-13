@@ -1,0 +1,37 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://kit.fontawesome.com/b86b4384c2.js" crossorigin="anonymous"></script>
+<app-header></app-header>
+<div class="grid-container">
+    <div class="grid-child purple">
+       <img class="loginimage" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPqulqlFOvJjKN27V2Y0pZX65lR00FRokB0w&usqp=CAU" width="400" height="500" style="margin-left: 100px; margin-right: 10px; margin-top: 5px; border: 3px solid rgb(252, 81, 2);">
+   </div>
+   <div class="grid-child green">
+<!-- <div class="container mt-5"> -->
+    <h1 style="color: rgb(32, 31, 31); padding-top: 100px;" >Login</h1>
+    <div class="card" style="padding: 10px;">
+        <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+            <input type="text" #userName ngModel name="userName" id="userName" placeholder="Enter your username" class="form-control mb-3" required><span class="req">* </span>
+            <input type="password" #userPassword ngModel name="userPassword" id="userPassword" placeholder="Enter your password" class="form-control mb-3" required><span class="req">* </span>
+            <input type="submit" value="Login" class="btn"><!--form-control-->
+        </form><br><br><br>
+        <span class="psw">Forgot <a href="">password?</a></span>
+        <br><br>
+        <span class="psw">Or login with <a href=""></a></span><br>
+
+    <span class="psw"><a href=""><img src="../../assets/google-logo1.png" width="100" height="100" style="width: 35px; height: 35px; object-fit: cover; background-color: rgb(191, 188, 188); margin-left: 60px; margin-top: 10px;"></a></span>
+    <span class="psw"><a href=""><img src="../../assets/facebook-icon.png" width="100" height="100" style="width: 35px; height: 35px; object-fit: cover; background-color: rgb(191, 188, 188); margin-left: 50px; margin-top: 10px;"></a></span>
+
+    <br><br><br>
+     <span class="psw">First time user?<a href="/registration">  Register</a> here</span>
+    </div>
+</div>
+<!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" routerLink="/registration">Register</a>
+      </li>
+    </ul>
+</div> -->
+

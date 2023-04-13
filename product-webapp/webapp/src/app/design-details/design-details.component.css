@@ -1,0 +1,42 @@
+.grid-container {
+    background-color: rgb(191, 188, 188);
+    box-sizing: border-box;resize: vertical;
+    
+    position: relative;
+}
+.rowpart{
+    text-align: center;
+    
+}
+.checked {
+    color: orange;
+  }
+.fa{
+    font-size: 32px;
+}
+.heading {
+    font-size: 25px;
+    margin-right: 25px;
+  }
+  
+
+  .btn{
+    
+    font-weight: bold;
+background-color: orangered;
+    
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;border-color: black;
+    color: black;
+    margin-left: 50px;
+    margin-right: 50px;
+    display: flex;
+    justify-content: center;
+    white-space: normal;
+}
+.btn:hover{
+    border-color:blue;
+    transition: .5s;
+}
+

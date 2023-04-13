@@ -1,0 +1,21 @@
+<app-header-designer></app-header-designer>
+<div class="total" id="main2" >
+    <div class="container" style="margin-left: 550px;">
+        
+        <form>
+            <div class="card" style="width: 18rem;margin-left: 30px;">
+                <ul class="list-group list-group-flush">
+                    <h1 style="background-color:aliceblue ;">Account details</h1><br>
+                    <li class="list-group-item">designerId: {{designer1.designerId}}</li> 
+                    <li class="list-group-item">shopname: {{designer1.shopname}}</li> 
+                    <li class="list-group-item">First Name : {{designer1.name}}</li>
+                    <li class="list-group-item">Phone No. : {{designer1.mobile_no}}</li>
+                    <li class="list-group-item">City : {{designer1.city}}</li>
+                </ul>
+            </div>
+            <button mat-flat-button color="primary" type="submit"[routerLink]="['/update1',this.designer1.designerId]" aria-current="page"   class="btn">Edit</button>
+            <button type="submit" (click)="getDetails()"  class="btn">newEdit</button>
+        </form>
+        
+    </div>
+    </div>

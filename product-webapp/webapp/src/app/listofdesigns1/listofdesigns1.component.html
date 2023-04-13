@@ -1,0 +1,151 @@
+<app-header-customer></app-header-customer>
+
+<div class="grid-container" id="main2">
+  <div class="wrapper1">
+    <div class="links">
+      <ul>
+        <li data-view="list-view" class="li-list active">
+        <i class="fas fa-th-list"></i>
+        List Of Designs</li>
+        <!-- <li data-view="grid-view" class="li-grid">
+        <i class="fas fa-th-large"></i>
+        Grid View</li> -->
+      </ul>
+    </div>
+    <div class="view_main">
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+            <div class="input-group">
+                <div class="input-group-btn">
+                    <button type="button" class="btn btn-inverse dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                </div>
+                <!-- /btn-group -->
+                <input type="text" class="form-control"/>
+                <span class="input-group-btn">
+                    <button class="btn btn-inverse" type="button">Go!</button>
+                 </span>
+            </div>
+        </div>
+    </div>
+      <div class="view_wrap list-view" style="display: block;">
+        <div class="view_item">
+          <div class="vi_left">
+              <img src= "../../assets/4.jfif" alt="New York" style="width: 387px; height: 150px; object-fit: cover; padding-left: 0%;">
+          </div>
+          <div class="vi_right">
+            <p class="title">{{design8.d_name}}</p>
+            <p class="content">Interior design of home living room</p>
+            <p class="title">Starting at {{design8.d_cost}}</p>
+            <div class="btn">Shop</div>
+          </div>
+        </div>
+        <button type="submit" (click)="getDetails1()"  class="btn">newEdit</button>
+        <div class="view_item">
+          <div class="vi_left">
+              <img src= "../../assets/3.webp" alt="New York" style="width: 387px; height: 150px; object-fit: cover; padding-left: 0%;">
+          </div>
+          <div class="vi_right">
+            <p class="title">{{design9.d_name}}</p>
+            <p class="content">Interior design of home living room</p>
+            <p class="title">Starting at {{design9.d_cost}}</p>
+            <div class="btn">Shop</div>
+          </div>
+        </div>
+        <div class="view_item">
+          <div class="vi_left">
+              <img src= "../../assets/2.jpg" alt="New York" style="width: 387px; height: 150px; object-fit: cover; padding-left: 0%;">
+          </div>
+          <div class="vi_right">
+            <p class="title"> {{design10.d_name}}</p>
+            <p class="content">Interior design of home living room</p>
+            <p class="title">Starting at {{design10.d_cost}}</p>
+            <div class="btn">Shop</div>
+          </div>
+        </div>
+        <div class="view_item">
+          <div class="vi_left">
+              <img src= "../../assets/1.jpg" alt="New York" style="width: 387px; height: 150px; object-fit: cover; padding-left: 0%;">
+          </div>
+          <div class="vi_right">
+            <p class="title">{{design11.d_name}}</p>
+            <p class="content">Interior design of home living room</p>
+            <p class="title">Starting at {{design11.d_cost}}</p>
+            <div class="btn">Shop</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="grid-child green">
+    <div class="wrapper2">
+      <div class="links">
+        <ul>
+          <li data-view="list-view" class="li-list active">
+          <i class="fas fa-th-list"></i>
+          Recommandations</li>
+          <!-- <li data-view="grid-view" class="li-grid">
+          <i class="fas fa-th-large"></i>
+          Grid View</li> -->
+        </ul>
+      </div>
+      <div class="view_main" >
+        <div class="view_wrap list-view" style="display: block; border-radius: 25px;">
+          <div class="view_item">
+            <div class="vi_left">
+              <img src= "../../assets/7.avif" alt="New York" style="width: 50px; height: 150px; object-fit: cover;">
+          </div>
+            <div class="vi_right">
+              <p class="title">{{design12.d_name}}</p>
+              <p class="content">Interior design of home living room</p>
+              <p class="title">Starting at {{design12.d_cost}}</p>
+              <div class="btn">Shop</div>
+            </div>
+          </div>
+          <div class="view_item">
+            <div class="vi_left">
+              <img src= "../../assets/6.avif" alt="New York" style="width: 50px; height: 150px; object-fit: cover;">
+          </div>
+            <div class="vi_right">
+              <p class="title">{{design13.d_name}}</p>
+              <p class="content">Interior design of home living room</p>
+              <p class="title">Starting at {{design13.d_cost}}</p>
+              <div class="btn">Shop</div>
+            </div>
+          </div>
+          <div class="view_item">
+            <div class="vi_left">
+              <img src= "../../assets/5.avif" alt="New York" style="width: 50px; height: 150px; object-fit: cover;">
+          </div>
+            <div class="vi_right">
+              <p class="title">{{design14.d_name}}</p>
+              <p class="content">Interior design of home living room</p>
+              <p class="title">Starting at {{design14.d_cost}}</p>
+              <div class="btn">Shop</div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="pagination">
+    <a href="\listofdesigns">&laquo;</a>
+    <!-- <a class="active" href="#">1</a> -->
+    <a href="\listofdesigns">1</a>
+    <a class="active" href="\listofdesigns1">2</a>
+    <!-- <a href="#">3</a> -->
+    <a href="\listofdesigns1">&raquo;</a>
+  </div>
+  <!-- <script src="scripts.js"></script> -->
+  
+  <!-- </body>
+  </html> -->

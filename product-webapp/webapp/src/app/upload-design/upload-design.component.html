@@ -1,0 +1,229 @@
+<app-header-designer></app-header-designer>
+<div class="grid-container" id="main2">
+    <br>
+    <div class="row ml-3">
+      <div class="col">
+        <div>
+          <img class="img-resp" src="https://i.ytimg.com/vi/QacK3mGU11o/maxresdefault.jpg"
+            style="width:700px;height: 650px; margin-bottom: 20px;" alt="...">
+        </div>
+      </div>
+  
+      <div class="col">
+        <h1 style="text-align: left;font-size: xx-large;">UPLOAD</h1>
+        <h2>your dream design and get it delivered..</h2>
+        
+        <div class="uploadpart" style="margin-right: 80px">
+          <div *ngIf="errorMessage.length!=0" class="alert alert-danger m-auto">{{ errorMessage }}</div>
+          <div class="data-form">
+            <form #designForm="ngForm"  (ngSubmit)="Submitclick()">
+              <div class="row">
+                <div class="col">
+                  <div class="form-group" style="width:100%;box-sizing: border-box;resize: vertical;">
+                    <label style=" font-weight: bold">Design Id</label>
+                    <input name="designid" type="text" [class.is-invalid]="control1.invalid && control1.touched" class="form-control" id="designid"
+                     required="required"  [(ngModel)]="user.dId" #control1="ngModel"
+                      placeholder="ENTER THE DESIGN ID..." pattern="[0-9]*" minlength="2" maxlength="5">
+                    <div [hidden]="control1.valid || control1.untouched" class="text-danger">
+                      <div [hidden]="!control1.hasError('maxlength')" style="font-size: smaller;">* MAXIMUM
+                        5 DIGITS ALLOWED
+                        !!!</div>
+                      <div [hidden]="!control1.hasError('minlength')" style="font-size: smaller;">* MINIMUM
+                        2 DIGITS
+                        ALLOWED!!!</div>
+                      <div [hidden]="!control1.hasError('required')" style="font-size: smaller;">* DESIGN ID
+                        IS REQUIRED !!!
+                      </div>
+                      <div [hidden]="!control1.hasError('pattern')" style="font-size: smaller;">* ONLY
+                        NUMBERS ARE ALLOWED
+                        !!!</div>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="col">
+                  <div class="form-group" style="width:100%;box-sizing: border-box;resize: vertical;">
+                    <label style=" font-weight: bold">Design Name</label>
+                    <input name="designname" type="text" class="form-control" id="designname" required="required" [(ngModel)]="user.d_name" #control2="ngModel"
+                    [class.is-invalid]="control2.invalid && control2.touched" placeholder="ENTER THE DESIGN NAME..."
+                    pattern="^[a-zA-Z0-9 ,.'-]+$">
+                    <div [hidden]="control2.valid || control2.untouched"
+                      class="text-danger">
+                      <div [hidden]="!control2.hasError('required')" style="font-size: smaller;">
+                        * DESIGN NAME IS REQUIRED !!!
+                      </div>
+                      <div [hidden]="!control2.hasError('pattern')" style="font-size: smaller;">
+                        * SPECIAL SYMBOLS NOT ALLOWED !!!
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+              
+              <div class="row">
+                <div class="col">
+                  <div class="form-group" style="width:100%;box-sizing: border-box;resize: vertical;">
+                    <label style=" font-weight: bold">Design Color</label>
+                    <input name="designcolor" required="required" type="text"  [(ngModel)]="user.d_color"
+                    [class.is-invalid]="control3.invalid && control3.touched" class="form-control" id="designcolor" #control3="ngModel"
+                      placeholder="ENTER THE DESIGN COLOR..." pattern="^[a-zA-Z ,.'-]+$">
+                    <div [hidden]="control3.valid || control3.untouched"
+                      class="text-danger">
+                      <div [hidden]="!control3.hasError('required')" style="font-size: smaller;">
+                        * DESIGN COLOR IS REQUIRED !!!
+                      </div>
+                      <div [hidden]="!control3.hasError('pattern')" style="font-size: smaller;">
+                        * ONLY LETTERS ARE ALLOWED !!!
+                      </div>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="col">
+                  <div class="form-group" style="width:100%;box-sizing: border-box;resize: vertical;">
+                    <label style=" font-weight: bold">Design Material</label>
+                    <input name="designmaterial" required="required" type="text" [(ngModel)]="user.d_material"
+                    [class.is-invalid]="control4.invalid && control4.touched" class="form-control" id="designmaterial" #control4="ngModel"
+                      placeholder="ENTER THE DESIGN MATERIAL..." pattern="^[a-zA-Z0-9 ,.'-]+$">
+                    <div [hidden]="control4.valid || control4.untouched"
+                      class="text-danger">
+                      <div [hidden]="!control4.hasError('required')" style="font-size: smaller;">
+                        * DESIGN MATERIAL IS REQUIRED !!!
+                      </div>
+                      <div [hidden]="!control4.hasError('pattern')" style="font-size: smaller;">
+                        * SPECIAL SYMBOLS NOT ALLOWED !!!
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="row">
+                <div class="col">
+                 <div class="form-group" style="width:100%;box-sizing: border-box;resize: vertical;">
+                    <label style=" font-weight: bold">Design Type</label>
+                    <input name="designtype" required="required" type="text"  [(ngModel)]="user.DesignType"
+                    [class.is-invalid]="control5.invalid && control5.touched" class="form-control" id="designtype" #control5="ngModel" 
+                      placeholder="ENTER THE DESIGN TYPE..." pattern="^[a-zA-Z ,.'-]+$">
+                    <div [hidden]="control5.valid || control5.untouched"
+                      class="text-danger">
+                      <div [hidden]="!control5.hasError('required')" style="font-size: smaller;">
+                        * DESIGN TYPE IS REQUIRED !!!
+                      </div>
+                      <div [hidden]="!control5.hasError('pattern')" style="font-size: smaller;">
+                        * ONLY LETTERS ARE ALLOWED !!!
+                      </div>
+                    </div>
+                  </div>
+                </div>
+  
+  
+                <div class="col">
+                  <div class="form-group" style="width:100%;box-sizing: border-box;resize: vertical;">
+                    <label style=" font-weight: bold">Design Area</label>
+                    <input name="designarea" required="required" type="text" [(ngModel)]="user.d_area"
+                    [class.is-invalid]="control6.invalid && control6.touched" class="form-control" id="designarea" #control6="ngModel" 
+                      placeholder="ENTER THE DESIGN AREA..." pattern="[0-9 .]*" minlength="2" maxlength="3">
+                    <div [hidden]="control6.valid || control6.untouched"
+                      class="text-danger">
+                      <div [hidden]="!control6.hasError('maxlength')" style="font-size: smaller;"> *
+                        MAXIMUM 3 DIGITS
+                        ALLOWED !!!</div>
+                      <div [hidden]="!control6.hasError('minlength')" style="font-size: smaller;">*
+                        MINIMUM 2 DIGITS ALLOWED
+                        !!!</div>
+                      <div [hidden]="!control6.hasError('required')" style="font-size: smaller;">* DESIGN
+                        AREA IS REQUIRED
+                        !!!</div>
+                      <div [hidden]="!control6.hasError('pattern')" style="font-size: smaller;">* ONLY
+                        NUMBERS ARE ALLOWED
+                        !!!</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col">
+                  <div class="form-group" style="width:100%;box-sizing: border-box;resize: vertical;height: 100%; ">
+                    <label style=" font-weight: bold">Design Description</label>
+                    <input name="descript" required="required" type="text" style="height:80px ;" [(ngModel)]="user.d_description"
+                    [class.is-invalid]="control7.invalid && control7.touched" class="form-control" id="descript" #control7="ngModel"
+                    placeholder="ENTER THE DESCRIPTION OF THE DESIGN..." pattern="^[a-zA-Z0-9 ,.'-]+$">
+                    <div [hidden]="control7.valid || control7.untouched"
+                      class="text-danger">
+                      <div [hidden]="!control7.hasError('required')" style="font-size: smaller;">
+                        * DESIGN DESCRIPTION IS REQUIRED !!!
+                      </div>
+                      <div [hidden]="!control7.hasError('pattern')" style="font-size: smaller;">
+                        * SPECAIL SYMBOLS NOT ALLOWED !!!
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+  
+              <div class="row">
+                <div class="col">
+                  <div class="form-group" style="width:100%;box-sizing: border-box;resize: vertical;">
+                    <label style=" font-weight: bold">Design Price</label>
+                    <input name ="price" required="required" type="text" [(ngModel)]="user.d_cost"
+                    [class.is-invalid]="control8.invalid && control8.touched" class="form-control" id="price" #control8="ngModel"
+                      placeholder="ENTER THE DESIGN PRICE..." pattern="[0-9 ,.]*" minlength="3" maxlength="7">
+                    <div [hidden]="control8.valid || control8.untouched"
+                      class="text-danger">
+                      <div [hidden]="!control8.hasError('maxlength')" style="font-size: smaller;">*
+                        MAXIMUM 7 DIGITS ALLOWED
+                        !!!
+                      </div>
+                      <div [hidden]="!control8.hasError('minlength')" style="font-size: smaller;">*
+                        MINIMUM 3 DIGITS ALLOWED
+                        !!!
+                      </div>
+                      <div [hidden]="!control8.hasError('required')" style="font-size: smaller;">* DESIGN
+                        PRICE IS REQUIRED
+                        !!!
+                      </div>
+                      <div [hidden]="!control8.hasError('pattern')" style="font-size: smaller;">* ONLY
+                        NUMBERS ARE ALLOWED
+                        !!!
+                      </div>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="col">
+                  <div class="form-group" style="width:100%;box-sizing: border-box;resize: vertical;">
+                    <label style=" font-weight: bold">Design Location</label>
+                    <input name="location" required="required" type="text" [(ngModel)]="user.d_location"
+                    [class.is-invalid]="control9.invalid && control9.touched" class="form-control" id="location" #control9="ngModel"
+                      placeholder="ENTER THE DESIGN LOCATION..." pattern="^[a-zA-Z ,.'-]+$">
+                    <div [hidden]="control9.valid || control9.untouched"
+                      class="text-danger">
+                      <div [hidden]="!control9.hasError('required')" style="font-size: smaller;">
+                        * DESIGN LOCATION IS REQUIRED !!!
+                      </div>
+                      <div [hidden]="!control9.hasError('pattern')" style="font-size: smaller;">
+                        * ONLY LETTERS ARE ALLOWED !!!
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+  
+             
+  
+  
+              <button mat-flat-button color="primary" type="submit" class="btn" style="margin-left:260px; margin-top: 30px;margin-bottom: 20px; display: flex;
+                justify-content: center;">
+                ADD DESIGN</button>
+            </form>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </div>

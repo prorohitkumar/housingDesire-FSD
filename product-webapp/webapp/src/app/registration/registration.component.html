@@ -1,0 +1,39 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<app-header></app-header>
+<div class="grid-container">
+  <div class="grid-child purple">
+    <img class="loginimage" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPqulqlFOvJjKN27V2Y0pZX65lR00FRokB0w&usqp=CAU" width="400" height="500" style="margin-left: 100px; margin-right: 10px; margin-top: 5px; border: 3px solid rgb(252, 81, 2);">
+</div>
+   <div class="grid-child green">
+    
+<!-- <div class="container col-md-6"> -->
+    <h1 style="color: rgb(19, 18, 18);">Register User</h1>
+     <form (ngSubmit)="userRegister()">
+       <div class="mb-3">
+         <input type="text" class="form-control" id="name" name="name" placeholder="Enter your username" [(ngModel)]="user.userName"><span class="req">* </span>
+       </div>
+       <div class="mb-3">
+         <input type="text" class="form-control" id="userId" name="userId" placeholder="Enter your userfirstname" [(ngModel)]="user.userFirstName" ><span class="req">* </span>
+       </div>
+       <div class="mb-3">
+         <input type="email" class="form-control" id="email" name="email" placeholder="Enter your userlastname" [(ngModel)]="user.userLastName" ><span class="req">* </span>
+       </div>
+       <div class="mb-3">
+         <input type="text" class="form-control" id="phone" name="phone" [(ngModel)]="user.userPassword" placeholder="Enter your userpassword"><span class="req">* </span>
+       </div>
+       <!-- <div class="mb-3">
+         <input type="text" class="form-control" id="password" name="password" placeholder="Enter your userrole" [(ngModel)]="user.userRole" >
+       </div><br> -->
+       <input type="radio" value="Designer" name="Designer" [(ngModel)]="user.userRole" class="form-control" id="password" required> Designer
+       <input type="radio" value="Customer" name="Customer" [(ngModel)]="user.userRole" class="form-control" id="password" required> Customer
+     <button type="submit" class="btn">Register</button>
+     </form><br><br><br><br>
+     <span class="psw">Or Register with<a href="#"></a></span><br>
+     <span class="psw"><a href=""><img src="../../assets/google-logo1.png" width="100" height="100" style="width: 35px; height: 35px; object-fit: cover; background-color: rgb(191, 188, 188); margin-left: 60px; margin-top: 10px;"></a></span>
+    <span class="psw"><a href=""><img src="../../assets/facebook-icon.png" width="100" height="100" style="width: 35px; height: 35px; object-fit: cover; background-color: rgb(191, 188, 188); margin-left: 50px; margin-top: 10px;"></a></span><br><br>
+     <span class="psw">Already have an account?<a href="/login">   Login</a> here</span>
+
+   </div>
+</div>

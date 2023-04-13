@@ -1,0 +1,24 @@
+
+<app-header-customer></app-header-customer>
+
+<div class="total" id="main2" >
+<div class="container" style="margin-left: 550px;">
+    
+    <form>
+        <div class="card" style="width: 18rem;margin-left: 30px;">
+            <ul class="list-group list-group-flush">
+                <h1 style="background-color:aliceblue ;">Account details</h1><br>
+                <li class="list-group-item">Name : {{customer1.firstname}} {{customer1.lastname}}</li>
+                <li class="list-group-item">Pincode : {{customer1.pincode}}</li>
+                <li class="list-group-item">Date of birth : {{customer1.doB}}</li>
+                <li class="list-group-item">state : {{customer1.state}}</li>
+                <li class="list-group-item">Phone No. : {{customer1.mobileNo}}</li>
+                <li class="list-group-item">email id : {{customer1.email}}</li>
+            </ul>
+        </div>
+        <button mat-flat-button color="primary" type="submit"[routerLink]="['/updatecustomer',this.customer1.email]" aria-current="page"   class="btn">Edit</button>
+        <button type="submit" (click)="getDetails()"  class="btn">newEdit</button>
+    </form>
+    
+</div>
+</div>
